@@ -15,11 +15,11 @@
             <ColumnDefinition Width="500*"/>
         </Grid.ColumnDefinitions>
         <ComboBox x:Name="ComboBoxClass" Margin="87,0,875,406" Height="22" VerticalAlignment="Bottom" Grid.ColumnSpan="2">
-            <sys:String>0</sys:String>
-            <sys:String>1</sys:String>
-            <sys:String>2</sys:String>
-            <sys:String>3</sys:String>
-            <sys:String>4</sys:String>
+            <sys:String>Мощный ноутбук, но не идеал</sys:String>
+            <sys:String>Мощный идеальный ноутбук</sys:String>
+            <sys:String>Очень плохой ноутбук</sys:String>
+            <sys:String>Ненадежный ноутбук</sys:String>
+            <sys:String>Хороший ноутбук для учебы</sys:String>
         </ComboBox>
         <Label x:Name="g00" 
                            Margin="335,94,635,382" 
@@ -43,9 +43,9 @@
                            HorizontalContentAlignment="Center" 
                            VerticalContentAlignment="Center" 
                            Content="y0"
-                           x:Name="y0" ContentStringFormat="" ToolTip="Класс 1" Width="30" Grid.Column="1"/>
-        <Label Height="30" Margin="370,64,600,412" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="y1" x:Name="y1" Width="30" ToolTip="Класс 2" Grid.Column="1"/>
-        <Label Height="30" Margin="405,64,565,412" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="y2" x:Name="y2" Width="30" ToolTip="Класс 3" Grid.Column="1"/>
+                           x:Name="y0" ContentStringFormat="" ToolTip="Мощный ноутбук, но не идеал" Width="30" Grid.Column="1"/>
+        <Label Height="30" Margin="370,64,600,412" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="y1" x:Name="y1" Width="30" ToolTip="Мощный идеальный ноутбук" Grid.Column="1"/>
+        <Label Height="30" Margin="405,64,565,412" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="y2" x:Name="y2" Width="30" ToolTip="Очень плохой ноутбук" Grid.Column="1"/>
         <Label Height="30" 
                            Margin="335,124,635,352" 
                            HorizontalContentAlignment="Center" 
@@ -122,31 +122,31 @@
                         Margin="305,94,665,382" 
                         HorizontalContentAlignment="Center" 
                         VerticalContentAlignment="Center"
-                        Content="x0" Width="30" Height="30" ToolTip="Признак 1" Grid.Column="1"/>
+                        Content="x0" Width="30" Height="30" ToolTip=">= 16 Гб ОЗУ" Grid.Column="1"/>
         <Label Height="30" 
                         Margin="305,124,665,352" 
                         HorizontalContentAlignment="Center" 
                         VerticalContentAlignment="Center" 
                         Content="x1"
-                        x:Name="x1" Width="30" ToolTip="Признак 2" Grid.Column="1"/>
+                        x:Name="x1" Width="30" ToolTip="Мощный процессор" Grid.Column="1"/>
         <Label Height="30" 
                         Margin="305,154,665,322" 
                         HorizontalContentAlignment="Center" 
                         VerticalContentAlignment="Center" 
                         Content="x2"
-                        x:Name="x2" Width="30" ToolTip="Признак 3" Grid.Column="1"/>
+                        x:Name="x2" Width="30" ToolTip="Наличие дискретной видеокарты" Grid.Column="1"/>
         <Label Height="30" 
                         Margin="305,184,665,292" 
                         HorizontalContentAlignment="Center" 
                         VerticalContentAlignment="Center" 
                         Content="x3"
-                        x:Name="x3" Width="30" ToolTip="Признак 4" Grid.Column="1"/>
+                        x:Name="x3" Width="30" ToolTip=">= 1 Тб ПЗУ" Grid.Column="1"/>
         <Label Height="30" 
                         Margin="305,214,665,262" 
                         HorizontalContentAlignment="Center" 
                         VerticalContentAlignment="Center" 
                         Content="x4"
-                        x:Name="x4" Width="30" ToolTip="Признак 5" Grid.Column="1"/>
+                        x:Name="x4" Width="30" ToolTip="Хорошее охлаждение" Grid.Column="1"/>
         <Label Height="30" 
                         Margin="335,244,635,232" 
                         HorizontalContentAlignment="Center" 
@@ -170,7 +170,7 @@
                         HorizontalContentAlignment="Center" 
                         VerticalContentAlignment="Center" 
                         Content="x5"
-                        x:Name="x5" Width="30" ToolTip="Признак 6" Grid.Column="1"/>
+                        x:Name="x5" Width="30" ToolTip="Аллюминиевый корпус" Grid.Column="1"/>
         <Label Height="30" 
                         Margin="335,274,635,202" 
                         HorizontalContentAlignment="Center" 
@@ -194,14 +194,14 @@
                         HorizontalContentAlignment="Center" 
                         VerticalContentAlignment="Center" 
                         Content="x6"
-                        x:Name="x6" Width="30" ToolTip="Признак 7" Grid.Column="1"/>
+                        x:Name="x6" Width="30" ToolTip="Долгий заряд батареи" Grid.Column="1"/>
         <Label Height="30" 
                         Margin="435,94,535,382" 
                         HorizontalContentAlignment="Center" 
                         VerticalContentAlignment="Center" 
                         Content="0"
                         x:Name="g03" Width="30" Grid.Column="1"/>
-        <Label Height="30" Margin="435,64,535,412" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="y3" x:Name="y3" Width="30" ToolTip="Класс 4" Grid.Column="1"/>
+        <Label Height="30" Margin="435,64,535,412" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="y3" x:Name="y3" Width="30" ToolTip="Ненадежный ноутбук" Grid.Column="1"/>
         <Label Height="30" 
                         Margin="435,124,535,352" 
                         HorizontalContentAlignment="Center" 
@@ -244,7 +244,7 @@
                         VerticalContentAlignment="Center" 
                         Content="0"
                         x:Name="g04" Width="30" Grid.Column="1"/>
-        <Label Height="30" Margin="465,64,505,412" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="y4" x:Name="y4" Width="30" ToolTip="Класс 5" Grid.Column="1"/>
+        <Label Height="30" Margin="465,64,505,412" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="y4" x:Name="y4" Width="30" ToolTip="Хороший ноутбук для учебы" Grid.Column="1"/>
         <Label Height="30" 
                         Margin="465,124,505,352" 
                         HorizontalContentAlignment="Center" 
@@ -285,43 +285,43 @@
                     Margin="0,0,28,339" 
                     HorizontalContentAlignment="Center" 
                     VerticalContentAlignment="Center"
-                    Content="x0" Width="30" Height="30" ToolTip="Признак 1" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                    Content="x0" Width="30" Height="30" ToolTip=">= 16 Гб ОЗУ" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
         <Label Height="30" 
                     Margin="0,0,28,309" 
                     HorizontalContentAlignment="Center" 
                     VerticalContentAlignment="Center" 
                     Content="x1"
-                    x:Name="x1_Copy" Width="30" ToolTip="Признак 2" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                    x:Name="x1_Copy" Width="30" ToolTip="Мощный процессор" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
         <Label Height="30" 
                     Margin="0,0,28,279" 
                     HorizontalContentAlignment="Center" 
                     VerticalContentAlignment="Center" 
                     Content="x2"
-                    x:Name="x2_Copy" Width="30" ToolTip="Признак 3" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                    x:Name="x2_Copy" Width="30" ToolTip="Наличие дискретной видеокарты" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
         <Label Height="30" 
                     Margin="0,0,28,249" 
                     HorizontalContentAlignment="Center" 
                     VerticalContentAlignment="Center" 
                     Content="x3"
-                    x:Name="x3_Copy" Width="30" ToolTip="Признак 4" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                    x:Name="x3_Copy" Width="30" ToolTip=">= 1 Тб ПЗУ" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
         <Label Height="30" 
                     Margin="0,0,28,219" 
                     HorizontalContentAlignment="Center" 
                     VerticalContentAlignment="Center" 
                     Content="x4"
-                    x:Name="x4_Copy" Width="30" ToolTip="Признак 5" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                    x:Name="x4_Copy" Width="30" ToolTip="Хорошее охлаждение" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
         <Label Height="30" 
                     Margin="0,0,28,189" 
                     HorizontalContentAlignment="Center" 
                     VerticalContentAlignment="Center" 
                     Content="x5"
-                    x:Name="x5_Copy" Width="30" ToolTip="Признак 6" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                    x:Name="x5_Copy" Width="30" ToolTip="Аллюминиевый корпус" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
         <Label Height="30" 
                     Margin="0,0,28,159" 
                     HorizontalContentAlignment="Center" 
                     VerticalContentAlignment="Center" 
                     Content="x6"
-                    x:Name="x6_Copy" Width="30" ToolTip="Признак 7" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                    x:Name="x6_Copy" Width="30" ToolTip="Долгий заряд батареи" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
         <ComboBox x:Name="ComboBoxClass_Copy" Margin="0,0,964,343" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="43" Grid.ColumnSpan="2">
             <System:Int32>0</System:Int32>
             <System:Int32>1</System:Int32>
@@ -350,9 +350,12 @@
             <System:Int32>0</System:Int32>
             <System:Int32>1</System:Int32>
         </ComboBox>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="180,0,0,0" VerticalAlignment="Center" Height="38" Width="76" Click="Button_Click" Grid.Column="1"/>
+        <Button x:Name="button" Content="Обучить" HorizontalAlignment="Left" Margin="180,0,0,0" VerticalAlignment="Center" Height="38" Width="76" Click="Button_Click" Grid.Column="1"/>
         <Slider x:Name="slider" Grid.Column="1" HorizontalAlignment="Left" Margin="778,421,0,0" VerticalAlignment="Top" Width="120" Maximum="1" AutoToolTipPlacement="TopLeft" SmallChange="1" Cursor="Hand" ValueChanged="Slider_ValueChanged"/>
         <Label x:Name="rejim" Grid.Column="1" Content="Режим обучения" HorizontalAlignment="Left" Margin="625,191,0,0" VerticalAlignment="Top" Height="60" Width="352" FontSize="36" Foreground="#FF3ED61F" FontWeight="Bold"/>
+        <Label x:Name="ExpertResult" Grid.Column="1" Content="" HorizontalAlignment="Left" Margin="337,390,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="SaveButton" Content="Сохранить" HorizontalAlignment="Left" Margin="37,27,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="63" Click="SaveButton_Click"/>
+        <Button x:Name="LoadButton" Content="Загрузить" HorizontalAlignment="Left" Margin="19,27,0,0" VerticalAlignment="Top" Width="64" Grid.Column="1" Click="LoadButton_Click"/>
     </Grid>
 
 </Window>

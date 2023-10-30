@@ -1,6 +1,12 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -49,16 +55,26 @@ namespace ExpertSystem
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (rejim.Content == "Режим обучения")
+            if ((string)rejim.Content == "Режим обучения")
             {
                 var inputMatrix = new List<int> { Convert.ToInt32(ComboBoxClass_Copy.Text), Convert.ToInt32(ComboBoxClass_Copy1.Text),
                                               Convert.ToInt32(ComboBoxClass_Copy2.Text), Convert.ToInt32(ComboBoxClass_Copy3.Text),
                                               Convert.ToInt32(ComboBoxClass_Copy4.Text), Convert.ToInt32(ComboBoxClass_Copy5.Text),
                                               Convert.ToInt32(ComboBoxClass_Copy6.Text)};
-                var inputClass = Convert.ToInt32(ComboBoxClass.Text);
+                var inputClass = Convert.ToInt32(ComboBoxClass.SelectedIndex);
 
                 mainMatrix.Education(inputClass, inputMatrix);
                 InitializeMatrix();
+            }
+            else
+            {
+                var inputMatrix = new List<int> { Convert.ToInt32(ComboBoxClass_Copy.Text), Convert.ToInt32(ComboBoxClass_Copy1.Text),
+                                              Convert.ToInt32(ComboBoxClass_Copy2.Text), Convert.ToInt32(ComboBoxClass_Copy3.Text),
+                                              Convert.ToInt32(ComboBoxClass_Copy4.Text), Convert.ToInt32(ComboBoxClass_Copy5.Text),
+                                              Convert.ToInt32(ComboBoxClass_Copy6.Text)};
+
+                var result = mainMatrix.Expert(inputMatrix);
+                ExpertResult.Content = "Ваш класс - " + (string)ComboBoxClass.Items[result];
             }
         }
 
@@ -70,6 +86,8 @@ namespace ExpertSystem
                 var brush = new SolidColorBrush(Color.FromRgb(255, 0, 255));
                 rejim.Foreground = brush;
                 ComboBoxClass.Visibility = Visibility.Collapsed;
+                ExpertResult.Content = "";
+                button.Content = "Определить";
             }
             else
             {
@@ -77,6 +95,54 @@ namespace ExpertSystem
                 var brush = new SolidColorBrush(Color.FromRgb(50, 200, 30));
                 rejim.Foreground = brush;
                 ComboBoxClass.Visibility = Visibility.Visible;
+                ExpertResult.Content = "";
+                button.Content = "Обучить";
+            }
+        }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            var formatter = new BinaryFormatter();
+            var saveFileDialog = new SaveFileDialog();
+            saveFileDialog.FileName = "ExpertSystem" + DateTime.Now.ToString();
+            saveFileDialog.DefaultExt = ".exp";
+            saveFileDialog.AddExtension = true;
+            saveFileDialog.Filter = "ExpertSystem(*.exp)|*.exp|Все файлы(*.*)|*.*";
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                try
+                {
+                    using (FileStream fs = new FileStream(saveFileDialog.FileName, FileMode.OpenOrCreate))
+                    {
+                        formatter.Serialize(fs, mainMatrix);
+                    }
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+        }
+
+        private void LoadButton_Click(object sender, RoutedEventArgs e)
+        {
+            var formatter = new BinaryFormatter();
+            var openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "ExpertSystem(*.exp)|*.exp|Все файлы(*.*)|*.*";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                try
+                {
+                    using (FileStream fs = new FileStream(openFileDialog.FileName, FileMode.OpenOrCreate))
+                    {
+                        mainMatrix = (MainMatrix)formatter.Deserialize(fs);
+                        InitializeMatrix();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
         }
     }
